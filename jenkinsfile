@@ -4,7 +4,7 @@ pipeline {
     registryCredential = 'dockerhub'
     dockerImage = ''
     BUILD_NUMBER = "${env.BUILD_NUMBER}"
-    MAVEN_CONFIG="/.mvn"
+    //MAVEN_CONFIG="/.mvn"
 
     }
     agent { label 'docker'}
