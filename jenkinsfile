@@ -19,7 +19,7 @@ pipeline {
             steps {
                 sh "ssh -V"
                 sh "mvn -version"
-                sh "mvn -x clean install"
+                sh "mvn -X clean install"
             }
         }
         //stage('docker build'){
