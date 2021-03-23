@@ -16,17 +16,19 @@ pipeline {
     }    
     stages 
     {
-       // stage('Cloning Git') {
-         //   steps {
-           //     git credentialsId: 'github', url: 'https://github.com/acidotony/kolektortest1.git'
-            //}
-        //}
-        stage('docker build'){
-            steps{
-                script {
-                        dockerImage = docker.build registry + ":$BUILD_NUMBER"
-                }
+        stage("Build") {
+            steps {
+                sh "ssh -V"
+                sh "mvn -version"
+                sh "mvn clean install"
             }
+        }
+        //stage('docker build'){
+          //  steps{
+            //    script {
+              //          dockerImage = docker.build registry + ":$BUILD_NUMBER"
+                //}
+            //}
                 
         }
     }
