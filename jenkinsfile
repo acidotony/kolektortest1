@@ -14,7 +14,6 @@ pipeline {
            //     git credentialsId: 'github', url: 'https://github.com/acidotony/kolektortest1.git'
             //}
         //}
-         
         stage('docker build'){
             steps{
                 script {
