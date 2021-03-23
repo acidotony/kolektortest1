@@ -11,7 +11,7 @@ pipeline {
     agent { 
         dockerfile { 
           label 'docker'
-          args "-v /.mvn:/home/jenkins/m2 -e MAVEN_CONFIG=/home/jenkins/m2"
+          // args "-v /.mvn:/home/jenkins/m2 -e MAVEN_CONFIG=/home/jenkins/m2"
         }
     }    
     stages {
