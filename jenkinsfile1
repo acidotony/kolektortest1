@@ -4,18 +4,11 @@ pipeline {
     registryCredential = 'dockerhub'
     dockerImage = ''
     BUILD_NUMBER = "${env.BUILD_NUMBER}"
-    JAVA_TOOL_OPTIONS = "-Duser.home=/home/jenkins"
     //MAVEN_CONFIG="/.mvn"
 
     }
-    agent { 
-        dockerfile { 
-          label 'docker'
-          args "-v /.mvn:/home/jenkins/.m2 -e MAVEN_CONFIG=/home/jenkins/.m2"
-        }
-    }    
-    stages 
-    {
+    agent { label 'docker'}
+    stages {
        // stage('Cloning Git') {
          //   steps {
            //     git credentialsId: 'github', url: 'https://github.com/acidotony/kolektortest1.git'

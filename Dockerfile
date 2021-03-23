@@ -1,14 +1,5 @@
-FROM maven:3.6.0-jdk-8 as Build
-WORKDIR /app
-COPY . .
-RUN mvn -version
-RUN mvn clean install
+FROM maven:3.6.0-jdk-13
 
+RUN useradd -m -u 1000 -s /bin/bash jenkins
 
-
-
-#args "-v /tmp/maven:/.mvn -e MAVEN_CONFIG=/.mvn"
-
-
-
-
+RUN yum install -y openssh-clients

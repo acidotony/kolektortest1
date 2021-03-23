@@ -1,0 +1,15 @@
+FROM maven:3.6.0-jdk-8 as Build
+WORKDIR /app
+COPY . .
+RUN mvn -version
+RUN mvn install
+RUN mvn clean install
+
+
+
+
+
+
+
+
+
