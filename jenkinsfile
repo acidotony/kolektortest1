@@ -14,8 +14,7 @@ pipeline {
           args "-v /.mvn:/home/jenkins/.m2 -e MAVEN_CONFIG=/home/jenkins/.m2"
         }
     }    
-    stages 
-    {
+    stages {
         stage("Build") {
             steps {
                 sh "ssh -V"
@@ -30,8 +29,8 @@ pipeline {
                 //}
             //}
                 
-        }
     }
+    
 }
     //stage("Build") {
             
