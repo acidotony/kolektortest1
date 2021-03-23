@@ -3,22 +3,17 @@ pipeline {
     registry = "acidotony/kolektortest1"
     registryCredential = 'dockerhub'
     dockerImage = ''
+    BUILD_NUMBER = ${env.BUILD_NUMBER}
 
     }
     agent { label 'docker'}
     stages {
         stage('Cloning Git') {
             steps {
-                git 'https://github.com/acidotony/kolektortest1.git'
+                git credentialsId: 'github', url: 'https://github.com/acidotony/kolektortest1.git'
             }
         }
-        stage("Build") {
-            
-            steps {
-                sh "mvn -version"
-                sh "mvn clean install"
-            }
-        }  
+         
         stage('docker build'){
             steps{
                 script {
