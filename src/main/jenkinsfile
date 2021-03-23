@@ -1,10 +1,10 @@
 pipeline {
-    environment {
-    registry = "acidotony/kolektortest1"
-    registryCredential = 'dockerhub'
-    dockerImage = ''
+    //environment {
+    //registry = "acidotony/kolektortest1"
+    //registryCredential = 'dockerhub'
+    //dockerImage = ''
 
-    }
+    //}
      agent { label 'docker' }
         
 
