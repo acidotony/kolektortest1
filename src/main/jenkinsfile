@@ -5,21 +5,22 @@ pipeline {
     dockerImage = ''
 
     }
-    agent {
-        docker {
-            image "maven:3.6.0-jdk-8"
-            label "docker"
-            args "-v /tmp/maven:/.mvn -e MAVEN_CONFIG=/.mvn"
-        }
-    }
+     agent { label 'docker' }
+        
 
     stages {
        stage('Cloning Git') {
         steps {
         git 'https://github.com/acidotony/kolektortest1.git'
       }
-    }
+      agent {
+        dockerfile {
+            label "docker"
+            args "-v /tmp/maven:/.mvn -e MAVEN_CONFIG=/.mvn"
+      }
+
     stage("Build") {
+            
             steps {
                 sh "mvn -version"
                 sh "mvn clean install"
