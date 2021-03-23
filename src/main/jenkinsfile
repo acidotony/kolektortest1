@@ -3,7 +3,8 @@ pipeline {
     registry = "acidotony/kolektortest1"
     registryCredential = 'dockerhub'
     dockerImage = ''
-    BUILD_NUMBER = ${env.BUILD_NUMBER}
+    BUILD_NUMBER = "${env.BUILD_NUMBER}"
+    MAVEN_CONFIG="/.mvn"
 
     }
     agent { label 'docker'}
