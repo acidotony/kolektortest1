@@ -9,11 +9,11 @@ pipeline {
     }
     agent { label 'docker'}
     stages {
-        stage('Cloning Git') {
-            steps {
-                git credentialsId: 'github', url: 'https://github.com/acidotony/kolektortest1.git'
-            }
-        }
+       // stage('Cloning Git') {
+         //   steps {
+           //     git credentialsId: 'github', url: 'https://github.com/acidotony/kolektortest1.git'
+            //}
+        //}
          
         stage('docker build'){
             steps{
